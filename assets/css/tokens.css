@@ -1,0 +1,26 @@
+/* DESIGN TOKENS: your territory. Change values here and every page follows.
+   Blue/white starter palette per your Notion brief; one accent per audience. */
+:root {
+  --c-bg: #ffffff;
+  --c-surface: #f3f7fd;
+  --c-text: #0b1b33;
+  --c-muted: #4a5d7a;
+  --c-border: #d5e0f0;
+  --c-primary: #1456d6;
+  --c-primary-ink: #ffffff;
+
+  /* one accent per audience */
+  --c-accent-business: #0a7ea4;
+  --c-accent-employer: #3a46c8;
+  --c-accent-content:  #0f8a8a;
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: var(--font-body);
+  --fs-base: 1rem;
+  --fs-h1: clamp(2rem, 5vw, 3.25rem);
+  --fs-h2: clamp(1.4rem, 3vw, 2rem);
+
+  --space: 1rem;
+  --radius: 12px;
+  --maxw: 68rem;
+}
