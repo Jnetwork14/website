@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | JNetwork</title>
+  <meta name="robots" content="noindex">
+  <!-- Absolute-from-root assets break on project pages, so resolve relative to the repo root via JS-free <base> trick is avoided; use inline minimal style instead. -->
+  <style>body{font-family:system-ui,sans-serif;max-width:36rem;margin:4rem auto;padding:0 1rem;line-height:1.6;color:#0b1b33}a{color:#1456d6}</style>
+</head>
+<body>
+  <h1>That page doesn’t exist</h1>
+  <p>Try the hub and pick the door that fits you.</p>
+  <p><a id="home" href="./">Back to the hub</a></p>
+  <script>
+    // On project pages (/repo/…) go to the first path segment; on a custom domain go to "/".
+    (function(){var host=location.hostname,seg=location.pathname.split("/")[1];
+      if(host.endsWith("github.io")&&seg){document.getElementById("home").href="/"+seg+"/";}
+      else{document.getElementById("home").href="/";}})();
+  </script>
+</body>
+</html>
