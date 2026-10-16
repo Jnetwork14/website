@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# TODO: add "Sitemap: https://<your-domain-or-github-pages-url>/sitemap.xml" once the URL is final
