@@ -100,11 +100,8 @@
       var intent = form.getAttribute("data-contact") || "general";
       track("form-submit-" + intent);
 
-      if (!c.accessKey) { // no backend configured: degrade to mailto instead of failing silently
-        var body = encodeURIComponent(message + "\n\n" + (fd.get("name") || "") + " <" + email + ">");
-        location.href = "mailto:" + c.fallbackEmail + "?subject=" +
-          encodeURIComponent("[JNetwork] " + intent) + "&body=" + body;
-        return setStatus(form, "Opening your email app…", true);
+      if (!c.accessKey) { // no backend configured yet: say so plainly instead of exposing an email address
+        return setStatus(form, "The contact form isn\u2019t switched on yet. Please check back soon.", false);
       }
       var btn = form.querySelector("button[type=submit]");
       if (btn) btn.disabled = true;
@@ -117,9 +114,9 @@
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.success !== false, j: j }; }); })
         .then(function (res) {
           if (res.ok) { form.reset(); setStatus(form, "Thanks. I’ll reply within two working days.", true); }
-          else { setStatus(form, "Something went wrong. Please email " + c.fallbackEmail + " instead.", false); }
+          else { setStatus(form, "Something went wrong. Please try again in a few minutes.", false); }
         })
-        .catch(function () { setStatus(form, "Network error. Please email " + c.fallbackEmail + " instead.", false); })
+        .catch(function () { setStatus(form, "Network error. Please check your connection and try again.", false); })
         .then(function () { if (btn) btn.disabled = false; });
     });
   });

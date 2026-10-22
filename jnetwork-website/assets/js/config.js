@@ -8,11 +8,10 @@ window.JNETWORK_CONFIG = {
   basePath: "",
 
   // Contact form backend. Create a free form at https://web3forms.com (or Formspree) and paste
-  // the endpoint + access key. Until then the form falls back to opening the visitor's mail app.
+  // the endpoint + access key. Until then the form shows a "not switched on yet" message. No email address is stored in this public repo.
   contact: {
     endpoint: "https://api.web3forms.com/submit", // TODO: keep for Web3Forms, change for Formspree
-    accessKey: "",                                // TODO: paste your Web3Forms access key
-    fallbackEmail: "fosterjessey00@gmail.com"     // used if accessKey is empty
+    accessKey: ""                                 // TODO: paste your Web3Forms access key (the form stays off until then)
   },
 
   // Click + page analytics. GoatCounter is free, cookie-less and works on static hosting.

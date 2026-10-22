@@ -41,3 +41,6 @@ input,textarea,select{font:inherit;padding:.65rem;border:1px solid var(--c-borde
 #site-footer{max-width:var(--maxw);margin:0 auto;padding:2rem var(--space);color:var(--c-muted)}
 .skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:9}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Make the hidden attribute win over component display rules (e.g. the CV button when the file is missing) */
+[hidden]{display:none !important}
