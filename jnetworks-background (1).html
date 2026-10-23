@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JNetworks background</title>
+<style>
+/* ===== JNetworks background (CI v2.0): copy from here ===== */
+.jn-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(135deg, #0B1220 0%, #0B1220 55%, #0A3563 100%);
+}
+.jn-bg > .jn-routes {
+  position: absolute; top: 0; right: 0;
+  width: min(62%, 620px); height: auto;
+  pointer-events: none;
+}
+.jn-bg > .jn-content { position: relative; } /* put your page content inside this */
+@media (max-width: 820px) {
+  .jn-bg > .jn-routes { width: 85%; opacity: 0.6; }
+}
+/* ===== to here ===== */
+
+body { margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- Put this class on your page wrapper (or just <body>) -->
+<div class="jn-bg">
+  <svg class="jn-routes" viewBox="0 0 520 230" aria-hidden="true">
+    <g fill="none" stroke-width="1.5">
+      <path stroke="#00C2FF" d="M20 0V80A130 130 0 0 0 150 210H480"/><circle cx="486" cy="210" r="5" stroke="#00C2FF"/>
+      <path stroke="#0A9BE0" d="M40 0V80A110 110 0 0 0 150 190H400"/><circle cx="406" cy="190" r="5" stroke="#0A9BE0"/>
+      <path stroke="#00C2FF" d="M60 0V80A90 90 0 0 0 150 170H515"/><circle cx="515" cy="170" r="5" stroke="#00C2FF"/>
+      <path stroke="#0A9BE0" d="M80 0V80A70 70 0 0 0 150 150H340"/><circle cx="346" cy="150" r="5" stroke="#0A9BE0"/>
+      <path stroke="#00C2FF" d="M100 0V80A50 50 0 0 0 150 130H440"/><circle cx="446" cy="130" r="5" stroke="#00C2FF"/>
+      <path stroke="#0A9BE0" d="M120 0V80A30 30 0 0 0 150 110H370"/><circle cx="376" cy="110" r="5" stroke="#0A9BE0"/>
+      <path stroke="#00C2FF" d="M140 0V80A10 10 0 0 0 150 90H300"/><circle cx="306" cy="90" r="5" stroke="#00C2FF"/>
+    </g>
+  </svg>
+  <div class="jn-content">
+    <!-- your site content goes here -->
+  </div>
+</div>
+
+</body>
+</html>
