@@ -37,10 +37,8 @@ a{color:var(--c-link,var(--c-link-home));text-underline-offset:.2em}
 /* ---------- header ---------- */
 #site-header{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;justify-content:space-between;
   max-width:var(--maxw);margin:0 auto;padding:1.1rem var(--space)}
-.brand{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;
-  text-decoration:none;color:var(--c-ink-deep)}
-.brand::before{content:"";width:.8rem;height:.8rem;border-radius:50%;background:var(--c-primary);
-  box-shadow:0 0 0 4px var(--c-surface),0 0 0 5px var(--c-border)}
+.brand{display:inline-flex;align-items:center;text-decoration:none;color:var(--c-ink-deep)}
+.brand img{display:block;height:3.4rem;width:auto;max-width:100%;margin-left:-.6rem}
 .nav{display:flex;gap:.25rem;flex-wrap:wrap}
 .nav a{padding:.45rem .9rem;border-radius:999px;text-decoration:none;color:var(--c-muted);font-weight:600;font-size:.95rem}
 .nav a:hover{background:var(--c-surface);color:var(--c-ink-deep)}

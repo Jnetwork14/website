@@ -46,7 +46,7 @@
   var page = document.body.getAttribute("data-page") || "";
 
   mount("site-header",
-    '<a class="brand" href="' + url("index.html") + '" data-track="nav-home">' + esc(cfg.siteName || "JNetwork") + '</a>' +
+    '<a class="brand" href="' + url("index.html") + '" data-track="nav-home"><img src="' + url("assets/img/logo-dark.svg") + '" alt="JNetworks, home" width="286" height="77"></a>' +
     '<nav class="nav" aria-label="Main">' +
       (cfg.audiences || []).map(function (a) {
         return '<a href="' + url(a.href) + '"' + (a.id === page ? ' aria-current="page"' : '') +
