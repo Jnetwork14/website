@@ -124,3 +124,42 @@ form .btn{justify-self:start}
 
 /* Make the hidden attribute win over component display rules (e.g. the CV button when the file is missing) */
 [hidden]{display:none !important}
+
+/* ---------- homepage: "how this site was built" ---------- */
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.built{scroll-margin-top:1rem}
+.built-head{max-width:46rem}
+.built-eyebrow{font:600 .78rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--c-link);margin:0 0 .9rem}
+.built-grid{display:grid;gap:1.25rem;margin-top:1.75rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:60rem){.built-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:stretch}}
+.win{background:#080d18;border:1px solid var(--c-border);border-radius:var(--radius);overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.win>[role=tabpanel]{flex:1;display:flex;min-width:0}
+.win>[role=tabpanel] pre{flex:1;min-width:0;max-height:none}
+.win-bar{display:flex;gap:.25rem;padding:.45rem .5rem 0;background:#0d1526;border-bottom:1px solid var(--c-border);overflow-x:auto}
+.tab{font:600 .8rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-muted);background:none;border:0;padding:.7rem .95rem;border-radius:8px 8px 0 0;cursor:pointer;white-space:nowrap}
+.tab:hover{color:#fff}
+.tab[aria-selected=true]{color:#fff;background:#080d18;box-shadow:inset 0 2px 0 var(--c-link)}
+.win pre{margin:0;padding:1rem 0;overflow:auto;max-height:21rem;font:400 .82rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-text)}
+.win code{display:block;counter-reset:ln;min-width:max-content;font:inherit}
+.l{display:block;padding-right:1.1rem;white-space:pre}
+.l::before{counter-increment:ln;content:counter(ln);display:inline-block;width:2.6rem;margin-right:1rem;text-align:right;color:#5b6b88}
+.t{color:#38c4ee}.a{color:#9aa4ff}.s{color:#2dd4bf}.c{color:#8392ae}
+.repo{background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:1.25rem;display:grid;gap:1.1rem;min-width:0}
+.repo-top{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .55rem}
+.repo-icon{width:1.4rem;height:1.4rem;fill:none;stroke:var(--c-link);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.repo-name{margin:0 .4rem 0 0;font-weight:700;color:var(--c-ink-deep)}
+.badge{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:.32rem .6rem;border:1px solid var(--c-border);border-radius:999px;color:var(--c-muted)}
+.files{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem .75rem;font:400 .82rem/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-muted)}
+.mini{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);margin:0 0 .7rem}
+.commits{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.commits li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.1rem .75rem;font-size:.9rem;line-height:1.4}
+.sha{font:600 .78rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-link)}
+.commits time{grid-column:2;color:var(--c-muted);font-size:.78rem}
+.btn-sm{justify-self:start;padding:.6rem 1.2rem;font-size:.92rem}
+.flow{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.flow li{padding:1.1rem 1.2rem 1.2rem;border:1px solid var(--c-border);border-top:3px solid var(--c-link);border-radius:var(--radius);background:var(--c-surface);min-width:0}
+.flow .no{display:block;font:600 .74rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--c-link);margin-bottom:.6rem}
+.flow h3{margin:0 0 .35rem}
+.flow p{margin:0;color:var(--c-muted);font-size:.92rem}
+.flow code{font:600 .85rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-text);overflow-wrap:anywhere}
+.built-more{margin:1.5rem 0 0}
