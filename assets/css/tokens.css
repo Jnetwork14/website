@@ -1,19 +1,35 @@
 /* DESIGN TOKENS: your territory. Change values here and every page follows.
-   Blue/white starter palette per your Notion brief; one accent per audience. */
+   Midnight/blue palette from the JNetworks identity; one accent per audience. */
 :root {
-  --c-bg: #ffffff;
-  --c-surface: #f3f7fd;
-  --c-text: #0b1b33;
-  --c-muted: #4a5d7a;
-  --c-border: #d5e0f0;
+  --c-bg: #0b1220;
+  --c-surface: #111b2e;
+  --c-surface-hover: #172640;
+  --c-text: #e8edf6;
+  --c-muted: #a9b4c6;
+  --c-border: #243553;
   --c-primary: #1456d6;
   --c-primary-ink: #ffffff;
-  --c-ink-deep: #0b1b33;
+  --c-ink-deep: #ffffff;
 
-  /* one accent per audience */
+  /* one accent per audience (solid fills: buttons, active nav) */
   --c-accent-business: #0a7ea4;
   --c-accent-employer: #3a46c8;
   --c-accent-content:  #0b7a7a;
+
+  /* lighter tints of each accent for text, links and lines on the dark background */
+  --c-link-home:     #00c2ff;
+  --c-link-business: #38c4ee;
+  --c-link-employer: #9aa4ff;
+  --c-link-content:  #2dd4bf;
+
+  /* background gradient end colour per page (start is always midnight) */
+  --c-grad-home:     #0a3563;
+  --c-grad-business: #08475f;
+  --c-grad-employer: #1c2a6b;
+  --c-grad-content:  #0a4a4f;
+
+  --c-ok: #4ade80;
+  --c-error: #ff8a80;
 
   --font-body: "Montserrat", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   --font-head: var(--font-body);
@@ -24,4 +40,6 @@
   --space: 1rem;
   --radius: 14px;
   --maxw: 68rem;
+
+  color-scheme: dark;
 }
