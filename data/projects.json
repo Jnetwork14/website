@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "rise-components",
+    "title": "Rise 360 interactive components",
+    "summary": "TODO: one or two sentences on what these components do for learners.",
+    "tags": [
+      "Articulate Rise 360",
+      "HTML",
+      "JavaScript"
+    ],
+    "image": "assets/img/projects/rise-components.png",
+    "imageAlt": "TODO: describe the screenshot",
+    "url": "",
+    "linkLabel": "View demo",
+    "pages": [
+      "content",
+      "employer"
+    ],
+    "published": false
+  },
+  {
+    "slug": "powerbi-support-dashboard",
+    "title": "Support requests dashboard",
+    "summary": "TODO: one or two sentences on the dashboard and what it shows.",
+    "tags": [
+      "Power BI",
+      "DAX",
+      "Chart.js"
+    ],
+    "image": "assets/img/projects/powerbi-support-dashboard.png",
+    "imageAlt": "TODO: describe the screenshot",
+    "url": "",
+    "linkLabel": "View demo",
+    "pages": [
+      "employer"
+    ],
+    "published": false
+  }
+]

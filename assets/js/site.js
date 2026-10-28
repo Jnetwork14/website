@@ -149,6 +149,51 @@
       .catch(function () { a.hidden = true; });
   });
 
+  /* ---------- projects (data/projects.json -> [data-projects="<page id>"]) ----------
+     Only entries with "published": true and the page id in "pages" are shown. If none match,
+     the static markup already inside the container stays as the fallback. */
+  function safeLink(u) {
+    u = String(u || "").trim();
+    if (!u) return "";
+    if (/^https:\/\//i.test(u)) return u;
+    return /^[a-z][a-z0-9+.\-]*:/i.test(u) ? "" : url(u); // block javascript:, data:, http:
+  }
+  function initials(t) {
+    return String(t).split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w.charAt(0); }).join("").toUpperCase();
+  }
+  function projectCard(p) {
+    var img = safeLink(p.image), href = safeLink(p.url);
+    return '<article class="project">' +
+      '<figure class="project-shot"><span class="project-ph" aria-hidden="true">' + esc(initials(p.title)) + '</span>' +
+        (img ? '<img src="' + esc(img) + '" alt="' + esc(p.imageAlt || "") + '" width="1280" height="800" loading="lazy">' : "") + '</figure>' +
+      '<div class="project-body">' +
+        ((p.tags || []).length ? '<ul class="project-tags">' + p.tags.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : "") +
+        "<h3>" + esc(p.title) + "</h3><p>" + esc(p.summary || "") + "</p>" +
+        (href ? '<a class="btn project-link" href="' + esc(href) + '" target="_blank" rel="noopener" data-track="project-' + esc(p.slug || "link") + '">' + esc(p.linkLabel || "View project") + "</a>" : "") +
+      "</div></article>";
+  }
+  var projectGrids = document.querySelectorAll("[data-projects]");
+  if (projectGrids.length) {
+    fetch(url("data/projects.json"), { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (list) {
+        projectGrids.forEach(function (grid) {
+          var id = grid.getAttribute("data-projects");
+          var items = list.filter(function (p) { return p.published === true && (p.pages || []).indexOf(id) > -1; });
+          if (!items.length) return;
+          grid.className = "project-grid";
+          var wrap = grid.closest("section"); if (wrap) wrap.hidden = false; // section stays hidden until it has projects
+          grid.innerHTML = items.map(projectCard).join("");
+          grid.querySelectorAll(".project-shot img").forEach(function (im) {
+            function drop() { im.remove(); } // missing screenshot: the initials placeholder shows instead
+            im.addEventListener("error", drop);
+            if (im.complete && im.naturalWidth === 0) drop();
+          });
+        });
+      })
+      .catch(function () { /* keep the fallback markup */ });
+  }
+
   /* ---------- posts feed (data/posts.json -> #posts) ---------- */
   var feed = document.getElementById("posts");
   if (feed) {

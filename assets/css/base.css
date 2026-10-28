@@ -150,3 +150,16 @@ form .btn{justify-self:start}
 .flow p{margin:0;color:var(--c-muted);font-size:.92rem}
 .flow code{font:600 .85rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--c-text);overflow-wrap:anywhere}
 .built-more{margin:1.5rem 0 0}
+
+/* ---------- projects: screenshot cards ---------- */
+.project-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.project{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius)}
+.project-shot{position:relative;margin:0;aspect-ratio:16/10;background:linear-gradient(135deg,var(--c-surface-hover),var(--c-bg));border-bottom:1px solid var(--c-border)}
+.project-ph{position:absolute;inset:0;display:grid;place-items:center;font:800 2.4rem/1 var(--font-head);letter-spacing:.04em;color:var(--c-link);opacity:.5}
+.project-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;background:var(--c-bg)}
+.project-body{display:flex;flex-direction:column;gap:.6rem;flex:1;padding:1.15rem 1.25rem 1.3rem}
+.project-body h3{margin:0}
+.project-body p{margin:0;color:var(--c-muted);font-size:.95rem}
+.project-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.project-tags li{font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:.32rem .6rem;border:1px solid var(--c-border);border-radius:999px;color:var(--c-muted)}
+.project-link{margin-top:auto;align-self:flex-start;padding:.6rem 1.2rem;font-size:.92rem}
